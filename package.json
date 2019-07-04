@@ -32,10 +32,14 @@
     "moment": "^2.14.1",
     "require-dir": "^0.3.0",
     "rsync": "^0.5.0",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "snyk": "^1.189.0"
   },
   "scripts": {
     "postinstall": "gulp build",
-    "start": "./start-appengine.sh"
-  }
+    "start": "./start-appengine.sh",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
